@@ -3,15 +3,99 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>org.example</groupId>
     <artifactId>Sprint_4</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>Sprint_4: Yandex scooter UI automation project</name>
+    <description>
+        The final project of sprint:4, second project, in current project
+        I should be cover manual cases with Java/Selenium automation
+    </description>
+
+    <contributors>
+        <contributor>
+            <name>German Gribanov</name>
+            <email>german.gribanov@yandex.ru</email>
+            <organization>AO Sogaz</organization>
+            <organizationUrl>https://www.sogaz.ru/eng/</organizationUrl>
+            <roles>
+                <role>Yandex Practicum: Student</role>
+            </roles>
+            <timezone>GMT+3</timezone>
+        </contributor>
+    </contributors>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <!-- JAVA VERSION -->
+        <jdk-version>11</jdk-version>
+
+        <!-- MAVEN CONFIGURATION VERSION -->
+        <mvn-plugins-version>3.8.0</mvn-plugins-version>
+
+        <maven.compiler.source-version>{$jdk-version}</maven.compiler.source-version>
+        <maven.compiler.target-version>{$jdk-version}</maven.compiler.target-version>
+
+        <!-- PROJECT ENCODING -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- JUNIT VERSION -->
+        <junit.version>4.13.2</junit.version>
+
+        <!-- SELENIUM -->
+        <selenium-java.version>4.16.1</selenium-java.version>
+
+        <!-- PROPERTIES READER LIBRARY VERSION -->
+        <aeonbits.owner-version>1.0.12</aeonbits.owner-version>
+
+        <!-- LOGGERS VERSION-->
+        <logback-classic-version>1.4.12</logback-classic-version>
+        <log4j-version>2.21.1</log4j-version>
+        <pretty-logger-version>1.16</pretty-logger-version>
+        <lombok-version>1.18.30</lombok-version>
     </properties>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${mvn-plugins-version}</version>
+                <configuration>
+                    <source>${jdk-version}</source>
+                    <target>${jdk-version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium-java.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok-version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Log4J logger -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+    </dependencies>
 </project>
